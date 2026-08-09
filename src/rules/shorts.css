@@ -1,0 +1,22 @@
+html[data-screwdriver-hide-shorts] ytd-rich-shelf-renderer[is-shorts],
+html[data-screwdriver-hide-shorts] ytd-reel-shelf-renderer {
+  display: none !important;
+}
+
+html[data-screwdriver-hide-shorts] ytd-video-renderer:has(a[href^="/shorts/"]),
+html[data-screwdriver-hide-shorts] ytd-rich-item-renderer:has(a[href^="/shorts/"]) {
+  display: none !important;
+}
+
+html[data-screwdriver-hide-shorts] ytd-guide-entry-renderer:has(a[href^="/shorts"]),
+html[data-screwdriver-hide-shorts] ytd-mini-guide-entry-renderer:has(a[href^="/shorts"]) {
+  display: none !important;
+}
+
+html[data-screwdriver-hide-shorts] yt-tab-shape[tab-title="Shorts"] {
+  display: none !important;
+}
+
+html[data-screwdriver-hide-shorts] ytm-pivot-bar-item-renderer:has(a[href^="/shorts"]) {
+  display: none !important;
+}

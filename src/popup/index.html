@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>screwdriver</title>
+    <link rel="stylesheet" href="./popup.css" />
+  </head>
+  <body>
+    <header>
+      <h1>screwdriver</h1>
+      <label class="switch" title="Turn screwdriver on or off">
+        <input type="checkbox" id="enabled" aria-label="Turn screwdriver on or off" />
+        <span class="track" aria-hidden="true"></span>
+      </label>
+    </header>
+
+    <ul id="options"></ul>
+
+    <p id="disabled-note">screwdriver is off.</p>
+
+    <script type="module" src="./popup.ts"></script>
+  </body>
+</html>

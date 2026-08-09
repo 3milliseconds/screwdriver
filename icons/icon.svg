@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="16 16 96 96" width="256" height="256" fill="none" stroke="#5b4be1" stroke-linejoin="round" role="img">
+  <title>Screwdriver head</title>
+
+  <!-- head body -->
+  <circle cx="64" cy="64" r="44" stroke-width="3"/>
+  <circle cx="64" cy="64" r="38" stroke="#8b7cf6" stroke-width="2"/>
+
+  <!-- cruciform drive recess -->
+  <path d="M64 71.07L47.03 88.04L39.96 80.97L56.93 64L39.96 47.03L47.03 39.96L64 56.93L80.97 39.96L88.04 47.03L71.07 64L88.04 80.97L80.97 88.04Z" fill="#8b7cf6" fill-opacity=".16" stroke-width="2.5"/>
+  <circle cx="64" cy="64" r="4.5" stroke="#8b7cf6" stroke-width="1.5"/>
+</svg>

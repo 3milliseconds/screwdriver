@@ -1,0 +1,40 @@
+html[data-screwdriver-hide-comments] ytd-comments#comments {
+  display: none !important;
+}
+
+html[data-screwdriver-hide-comments] ytm-comments-entry-point-header-renderer {
+  display: none !important;
+}
+
+/*
+ * Commenter avatars.
+ *
+ * `display: none` collapsed the thumbnail's box, so every comment's text jumped
+ * left into the gutter and the thread read as broken rather than deliberate.
+ * Instead the box stays exactly where it was and only the photo is flattened
+ * into a plain disc: `brightness(0)` maps every pixel to black regardless of
+ * the source, so nothing of the original image survives, and the circle is
+ * YouTube's own clipping — we never have to guess at a border-radius or a size.
+ *
+ * Scoped two ways: the whole comments section (which also catches the "Add a
+ * comment" box's copy of your own avatar), plus bare comment elements for the
+ * layouts that render threads outside that container.
+ */
+html[data-screwdriver-hide-comment-avatars] {
+  --screwdriver-avatar-fill: #000;
+  --screwdriver-avatar-flatten: brightness(0) opacity(0.1);
+}
+
+/* YouTube marks its dark theme on <html>; a near-black disc vanishes there. */
+html[dark][data-screwdriver-hide-comment-avatars] {
+  --screwdriver-avatar-fill: #fff;
+  --screwdriver-avatar-flatten: brightness(0) invert(1) opacity(0.16);
+}
+
+html[data-screwdriver-hide-comment-avatars] ytd-comments#comments #author-thumbnail img,
+html[data-screwdriver-hide-comment-avatars] ytd-comment-view-model #author-thumbnail img {
+  /* Painted behind the image so avatars with transparency don't show holes.
+     The filter flattens the background and the photo together. */
+  background-color: var(--screwdriver-avatar-fill) !important;
+  filter: var(--screwdriver-avatar-flatten) !important;
+}

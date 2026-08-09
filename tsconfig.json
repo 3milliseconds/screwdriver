@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "noImplicitOverride": true,
+    "noFallthroughCasesInSwitch": true,
+
+    "noEmit": true,
+    "isolatedModules": true,
+    "verbatimModuleSyntax": true,
+    "resolveJsonModule": true,
+    // vite.config.ts imports the manifest with an explicit .ts extension, which
+    // Vite's native config loader requires.
+    "allowImportingTsExtensions": true,
+    "skipLibCheck": true,
+
+    "types": ["chrome", "vite/client"]
+  },
+  "include": ["src", "scripts", "vite.config.ts"]
+}

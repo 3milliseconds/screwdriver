@@ -1,0 +1,20 @@
+html[data-screwdriver-hide-sidebar] ytd-watch-flexy #secondary {
+  display: none !important;
+}
+
+html[data-screwdriver-hide-sidebar] ytd-watch-flexy #primary {
+  max-width: none !important;
+}
+
+html[data-screwdriver-hide-recommended] ytd-watch-next-secondary-results-renderer {
+  display: none !important;
+}
+
+html[data-screwdriver-hide-live-chat] ytd-live-chat-frame,
+html[data-screwdriver-hide-live-chat] #chat-container {
+  display: none !important;
+}
+
+html[data-screwdriver-hide-playlist] ytd-playlist-panel-renderer {
+  display: none !important;
+}

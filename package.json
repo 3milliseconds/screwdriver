@@ -1,0 +1,37 @@
+{
+  "name": "screwdriver",
+  "version": "0.1.0",
+  "description": "Toggle off YouTube's feed, Shorts, and recommendations so you can focus on what you came to watch instead of doomscrolling.",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "build:debug": "vite build --mode development",
+    "package": "npm run check && npm run build && node scripts/package.mjs",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "lint": "biome check .",
+    "lint:fix": "biome check --write .",
+    "check": "npm run lint && npm run typecheck && npm run test",
+    "icons": "uv run scripts/make-icons.py",
+    "prepare": "simple-git-hooks"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "npx lint-staged",
+    "pre-push": "npm run typecheck && npm run test"
+  },
+  "lint-staged": {
+    "*": "biome check --write --files-ignore-unknown=true --no-errors-on-unmatched"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.5.7",
+    "@crxjs/vite-plugin": "^2.7.1",
+    "@types/chrome": "^0.2.5",
+    "lint-staged": "^17.3.0",
+    "simple-git-hooks": "^2.13.1",
+    "typescript": "^7.0.2",
+    "vite": "^8.2.1",
+    "vitest": "^4.1.10"
+  }
+}

@@ -1,0 +1,10 @@
+html[data-screwdriver-hide-end-screen] .html5-endscreen,
+html[data-screwdriver-hide-end-screen] .ytp-endscreen-content {
+  display: none !important;
+}
+
+html[data-screwdriver-hide-end-cards] .ytp-ce-element,
+html[data-screwdriver-hide-end-cards] .ytp-cards-teaser,
+html[data-screwdriver-hide-end-cards] .iv-branding {
+  display: none !important;
+}
