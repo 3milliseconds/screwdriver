@@ -48,6 +48,30 @@ Then load it in Chrome:
 2. Enable **Developer mode**
 3. Click **Load unpacked** and select the `dist/` directory
 
+## Publishing a GitHub Release
+
+The Release workflow runs when a version tag such as `v0.1.0` is pushed. It checks
+that the tag matches `package.json`, runs lint, type checks, and tests, builds the
+production extension, and publishes `screwdriver-<version>.zip` as a GitHub Release
+asset with generated release notes. It uses GitHub's built-in workflow token;
+no additional secret is needed.
+
+1. Commit and push the release workflow and extension changes to `main`.
+2. For subsequent releases, update the version with `npm version <version> --no-git-tag-version`,
+   then commit and push both `package.json` and `package-lock.json`.
+3. Tag the commit you want to release and push the tag:
+
+   ```sh
+   git tag -a v0.1.0 -m "Release v0.1.0"
+   git push origin v0.1.0
+   ```
+
+Use the same version in the tag and `package.json`; mismatches fail before the
+build. Check the **Release** run under the repository's **Actions** tab, then
+download the ZIP from [Releases](https://github.com/3milliseconds/screwdriver/releases).
+To install it, extract the ZIP and select the extracted directory using Chrome's
+**Load unpacked** option. Publishing to the Chrome Web Store is a separate step.
+
 ## Development
 
 ```sh
